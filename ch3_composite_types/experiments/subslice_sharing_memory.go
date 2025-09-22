@@ -29,7 +29,9 @@ func main() {
 	// y subslice doubled its capacity and created its own backing array (away from original slice - x)
 	// original slice (x) seems to have saved modified data from subslice (before capacity overflow)
 	// tested it. this seems to happen when the capacity overflow occurs with appending only one
-	// overflowing element to the subslice (boogles the mind, i know)
+	// overflowing element to the subslice (it changes the elements in subslice (y) tied to old backing
+	// array FIRST and ONLY THEN a new backing array is allocated because of the capacity overflow
+	// for y subslice)
 	fmt.Println("x: ", x)
 	fmt.Println("Capacity and length of x: ", cap(x), len(x))
 	fmt.Println("y: ", y)
