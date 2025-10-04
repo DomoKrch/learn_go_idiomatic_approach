@@ -16,7 +16,7 @@ func main() {
 	smallI = smallI + 1
 	bigI = bigI + 1
 
-	// Integer overflow
+	// Overflow
 	fmt.Println("After adding 1:")
 	fmt.Println("b: ", b)
 	fmt.Println("smallI: ", smallI)
